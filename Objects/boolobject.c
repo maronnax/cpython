@@ -8,7 +8,7 @@ static int
 bool_print(PyBoolObject *self, FILE *fp, int flags)
 {
     Py_BEGIN_ALLOW_THREADS
-    fputs(self->ob_ival == 0 ? "False" : "True", fp);
+    fputs(self->ob_ival == 0 ? "F" : "T", fp);
     Py_END_ALLOW_THREADS
     return 0;
 }
@@ -25,10 +25,10 @@ bool_repr(PyBoolObject *self)
 
     if (self->ob_ival)
         s = true_str ? true_str :
-            (true_str = PyString_InternFromString("True"));
+            (true_str = PyString_InternFromString("T"));
     else
         s = false_str ? false_str :
-            (false_str = PyString_InternFromString("False"));
+            (false_str = PyString_InternFromString("F"));
     Py_XINCREF(s);
     return s;
 }

@@ -2695,7 +2695,9 @@ _PyBuiltin_Init(void)
     SETBUILTIN("Ellipsis",              Py_Ellipsis);
     SETBUILTIN("NotImplemented",        Py_NotImplemented);
     SETBUILTIN("False",                 Py_False);
-    SETBUILTIN("True",                  Py_True);
+    SETBUILTIN("F",                     Py_False);
+    SETBUILTIN("T",                     Py_True);
+    SETBUILTIN("True",                  Py_True);    
     SETBUILTIN("basestring",            &PyBaseString_Type);
     SETBUILTIN("bool",                  &PyBool_Type);
     SETBUILTIN("memoryview",        &PyMemoryView_Type);
